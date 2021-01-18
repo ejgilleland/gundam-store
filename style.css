@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 24px;
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background-color: silver;
+  align-items: center;
+}
+
+#store-logo {
+  height: 4rem;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+}
+
+.navbar-icons {
+  padding-right: 1rem;
+}
+
+.navbar-icons > i {
+  margin-left: 0.25rem;
+  padding: 0.1rem;
+}
+
+.navbar-icons > i:active {
+  border: 2px solid black;
+  border-radius: 3px;
+}
+
+h1 {
+  margin-left: 2rem;
+}
