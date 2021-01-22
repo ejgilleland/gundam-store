@@ -25,6 +25,13 @@ function createProduct(products) {
   $productInformation.append($productName, $icons);
   $productName.innerHTML = products.name + '<br> $' + products.price;
   $icons.append($heartIcon, ' ', $cartPlus);
+
+  $heartIcon.addEventListener('click', function() {
+    if ($heartIcon.className !== 'fa fa-heart fav') {
+      data.favorites.push(products);
+      $heartIcon.className += ' fav';
+    }
+  });
   return $product;
 }
 

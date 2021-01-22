@@ -87,6 +87,14 @@ body {
   color: crimson;
 }
 
+.icons > .fa-heart:active {
+  transform: scale(1.25);
+}
+
+.fav {
+  color: crimson;
+}
+
 .fa-cart-plus:hover,
 .fa-shopping-cart:hover {
   color: rgb(7, 176, 233);
