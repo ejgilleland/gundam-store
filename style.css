@@ -3,7 +3,7 @@
 }
 
 html {
-  font-size: 24px;
+  font-size: 20px;
   font-family: 'Noto Sans', sans-serif;
 }
 
@@ -37,6 +37,57 @@ body {
   border-radius: 3px;
 }
 
-h1 {
-  margin-left: 2rem;
+.title {
+  margin-left: 3rem;
+}
+
+.products-container {
+  margin: auto;
+  width: 930px;
+  display: flex;
+  flex-basis: 300px;
+  flex-wrap: wrap;
+}
+
+.product {
+  border: 2px solid black;
+  border-radius: 25px;
+  margin: 0.25rem;
+  padding: 0.5rem;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: bolder;
+  width: 300px;
+  height: 300px;
+}
+
+.product-image {
+  display: block;
+  max-height: 175px;
+  margin: 1.25rem auto 0.25rem auto;
+}
+
+.product-information {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.product-information > div > i {
+  font-size: 1.5rem;
+}
+
+.fa-heart,
+.fa-cart-plus,
+.fa-shopping-cart {
+  transition-property: color;
+  transition-duration: 0.25s;
+}
+
+.fa-heart:hover {
+  color: crimson;
+}
+
+.fa-cart-plus:hover,
+.fa-shopping-cart:hover {
+  color: rgb(7, 176, 233);
 }
