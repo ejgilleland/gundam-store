@@ -79,7 +79,7 @@ body {
 .fa-heart,
 .fa-cart-plus,
 .fa-shopping-cart {
-  transition-property: color;
+  transition-property: color, transform;
   transition-duration: 0.25s;
 }
 
@@ -87,12 +87,17 @@ body {
   color: crimson;
 }
 
-.icons > .fa-heart:active {
-  transform: scale(1.25);
+.icons > .fa-heart:active,
+.icons > .fa-cart-plus:active {
+  transform: scale(1.5);
 }
 
 .fav {
   color: crimson;
+}
+
+.in-cart {
+  color: rgb(7, 176, 233);
 }
 
 .fa-cart-plus:hover,

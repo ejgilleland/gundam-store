@@ -32,6 +32,14 @@ function createProduct(products) {
       $heartIcon.className += ' fav';
     }
   });
+
+  $cartPlus.addEventListener('click', function() {
+    if ($cartPlus.className !== 'fa fa-cart-plus in-cart') {
+      data.cart.push(products);
+      $cartPlus.className += ' in-cart';
+    }
+  });
+
   return $product;
 }
 
