@@ -9,7 +9,7 @@ function createProduct(products) {
   var $cartPlus = document.createElement('i');
 
   $product.className = 'product';
-  $product.id = products.id;
+  $product.setAttribute('data-product-id', products.id);
   $productImage.className = 'product-image';
   $productInformation.className = 'product-information';
   $productName.className = 'product-name';
@@ -26,17 +26,16 @@ function createProduct(products) {
   $productName.innerHTML = products.name + '<br> $' + products.price;
   $icons.append($heartIcon, ' ', $cartPlus);
 
-  $heartIcon.addEventListener('click', function() {
-    if ($heartIcon.className !== 'fa fa-heart fav') {
-      data.favorites.push(products);
-      $heartIcon.className += ' fav';
-    }
-  });
-
-  $cartPlus.addEventListener('click', function() {
-    if ($cartPlus.className !== 'fa fa-cart-plus in-cart') {
-      data.cart.push(products);
-      $cartPlus.className += ' in-cart';
+  $product.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() === 'i') {
+      if (event.target.className === 'fa fa-heart') {
+        data.favorites.push(products);
+        $heartIcon.className += ' fav';
+      }
+      if (event.target.className === 'fa fa-cart-plus') {
+        data.cart.push(products);
+        $cartPlus.className += ' in-cart';
+      }
     }
   });
 
