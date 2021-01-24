@@ -26,19 +26,6 @@ function createProduct(products) {
   $productName.innerHTML = products.name + '<br> $' + products.price;
   $icons.append($heartIcon, ' ', $cartPlus);
 
-  $product.addEventListener('click', function(event) {
-    if (event.target.tagName.toLowerCase() === 'i') {
-      if (event.target.className === 'fa fa-heart') {
-        data.favorites.push(products);
-        $heartIcon.className += ' fav';
-      }
-      if (event.target.className === 'fa fa-cart-plus') {
-        data.cart.push(products);
-        $cartPlus.className += ' in-cart';
-      }
-    }
-  });
-
   return $product;
 }
 
@@ -47,6 +34,29 @@ function render() {
   for(var i = 0; i < data.products.length; i++) {
     $productsContainer.appendChild(createProduct(data.products[i]));
   }
+
+  $productsContainer.addEventListener('click', function(event) {
+    if (event.target.tagName.toLowerCase() === 'i') {
+      var selectedProductId = parseInt(event.target.closest('.product').dataset.productId);
+      if (event.target.className === 'fa fa-heart') {
+        event.target.className += ' fav';
+        for (var i = 0; i < data.products.length; i++) {
+          if (data.products[i].id === selectedProductId) {
+            data.favorites.push(data.products[i]);
+          }
+        }
+      }
+      if (event.target.className === 'fa fa-cart-plus') {
+        event.target.className += ' in-cart';
+        for (var i = 0; i < data.products.length; i++) {
+          if (data.products[i].id === selectedProductId) {
+            data.cart.push(data.products[i]);
+          }
+        }
+      }
+    }
+  });
+
 }
 
 window.addEventListener('load', render);
