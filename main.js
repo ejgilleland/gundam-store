@@ -35,7 +35,8 @@ function render() {
     $productsContainer.appendChild(createProduct(data.products[i]));
   }
 
-  $productsContainer.addEventListener('click', function(event) {
+  $productsContainer.addEventListener('click',
+  function(event) {
     if (event.target.tagName.toLowerCase() === 'i') {
       var selectedProductId = parseInt(event.target.closest('.product').dataset.productId);
       if (event.target.className === 'fa fa-heart') {
@@ -43,6 +44,14 @@ function render() {
         for (var i = 0; i < data.products.length; i++) {
           if (data.products[i].id === selectedProductId) {
             data.favorites.push(data.products[i]);
+          }
+        } return;
+      }
+      else if (event.target.className === 'fa fa-heart fav') {
+        event.target.className = 'fa fa-heart';
+        for (var i = 0; i < data.favorites.length; i++) {
+          if (data.favorites[i].id === selectedProductId) {
+            data.favorites.splice(data.favorites[i], 1);
           }
         }
       }
