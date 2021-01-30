@@ -96,6 +96,10 @@ body {
   color: crimson;
 }
 
+.fav:hover {
+  color: rgb(180, 60, 84);
+}
+
 .in-cart {
   color: rgb(7, 176, 233);
 }
